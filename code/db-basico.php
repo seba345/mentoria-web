@@ -47,8 +47,18 @@ $stmt = $db->prepare("SELECT * FROM users");
 $stmt->execute();
 $users= $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+echo '<table>
+    <tr>
+        <th> ID </th>
+        <th> Nombre</th>
+    </tr>';
+
 foreach($users as $user){
-    echo $user['id'] . "</br>";
-    echo $user['full_name']. "</br>";
+    echo'<tr>
+    <td>' . $user['id'] . '</td>
+    <td>' . $user['full_name']. '</td>
+    </tr>';
+
 }
+
 
