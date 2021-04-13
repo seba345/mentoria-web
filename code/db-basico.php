@@ -1,8 +1,8 @@
 <?php
 
 $dbname="registro";
-$dbuser="registro_user";
-$dbpassword="user2";
+$dbuser="admin";
+$dbpassword="user1";
 
 
 
@@ -11,7 +11,7 @@ try {
     $dsn ="mysql:host=localhost;dbname=$dbname";
     $db = new PDO($dsn,$dbuser, $dbpassword);
 
-    echo "Conexion Correcta..1";
+ //   echo "Conexion Correcta..1";
 } catch (PDOException $e){
         echo $e->getMessage();
 }
