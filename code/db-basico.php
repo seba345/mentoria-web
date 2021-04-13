@@ -11,7 +11,7 @@ try {
     $dsn ="mysql:host=localhost;dbname=$dbname";
     $db = new PDO($dsn,$dbuser, $dbpassword);
 
-    echo "Conexion Correcta";
+    echo "Conexion Correcta2";
 } catch (PDOException $e){
         echo $e->getMessage();
 }
