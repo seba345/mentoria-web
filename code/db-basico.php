@@ -21,7 +21,7 @@ try {
 $sql="Insert into users 
 (full_name,email,user_name, password)
 values
-(:full_name, :email, :user_name, :password);";
+(:full_name, :email, :user_name, :password)";
 
 //statement
 $stmt->prepare($sql);
