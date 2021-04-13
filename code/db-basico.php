@@ -24,7 +24,7 @@ values
 (:full_name, :email, :user_name, :password)";
 
 //statement
-$stmt->prepare($sql);
+$stmt= $db->prepare($sql);
 
 
 $full_name ='Juan Perez';
