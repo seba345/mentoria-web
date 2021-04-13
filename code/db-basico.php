@@ -11,17 +11,17 @@ try {
     $dsn ="mysql:host=localhost;dbname=$dbname";
     $db = new PDO($dsn,$dbuser, $dbpassword);
 
-    //echo "Conexion Correcta3";
+    echo "Conexion Correcta..1";
 } catch (PDOException $e){
         echo $e->getMessage();
 }
 
 
 //preparar consulta
-$sql="INSERT into users 
+$sql="INSERT INTO users 
 (full_name,email,user_name, password)
 values
-(:full_name, :email, :user_name, :password)";
+(:full_name, :email, :user_name, :password);";
 
 //statement
 $stmt= $db->prepare($sql);
