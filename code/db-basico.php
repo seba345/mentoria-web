@@ -11,7 +11,7 @@ try {
     $dsn ="mysql:host=localhost;dbname=$dbname";
     $db = new PDO($dsn,$dbuser, $dbpassword);
 
-   echo "Insertó correctamente";
+   echo "Insertó correctamente". "</br>";
 } catch (PDOException $e){
         echo $e->getMessage();
 }
@@ -48,7 +48,7 @@ $stmt->execute();
 $users= $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach($users as $user){
-    echo $user['id'];
-    echo $user['full_name'];
+    echo $user['id'] . "</br>";
+    echo $user['full_name']. "</br>";
 }
 
