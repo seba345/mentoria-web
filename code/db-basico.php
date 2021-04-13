@@ -11,7 +11,7 @@ try {
     $dsn ="mysql:host=localhost;dbname=$dbname";
     $db = new PDO($dsn,$dbuser, $dbpassword);
 
- //   echo "Conexion Correcta..1";
+   echo "Insertó correctamente";
 } catch (PDOException $e){
         echo $e->getMessage();
 }
