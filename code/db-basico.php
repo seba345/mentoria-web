@@ -18,7 +18,7 @@ try {
 
 
 //preparar consulta
-$sql="Insert into users 
+$sql="INSERT into users 
 (full_name,email,user_name, password)
 values
 (:full_name, :email, :user_name, :password)";
@@ -38,4 +38,3 @@ $stmt->bindParam(':user_name',$user_name);
 $stmt->bindParam(':password',$password);
 
 $stmt->execute();
-
