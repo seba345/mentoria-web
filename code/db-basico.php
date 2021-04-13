@@ -18,7 +18,7 @@ try {
 
 
 //preparar consulta
-$sql="INSERT INTO users 
+$sql = "INSERT INTO users 
 (full_name,email,user_name, password)
 values
 (:full_name, :email, :user_name, :password)";
@@ -32,9 +32,9 @@ $email ='juan.perez@segic.cl';
 $user_name = 'juan.perez';
 $password = 'juan123';
 
-$stmt->bindParam(':full_name',$full_name);
-$stmt->bindParam(':email',$email);
-$stmt->bindParam(':user_name',$user_name);
-$stmt->bindParam(':password',$password);
+$stmt->bindParam(':full_name', $full_name);
+$stmt->bindParam(':email', $email);
+$stmt->bindParam(':user_name', $user_name);
+$stmt->bindParam(':password', $password);
 
 $stmt->execute();
