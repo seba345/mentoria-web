@@ -3,7 +3,7 @@
 function connectDB()
 {
     $dbname = "registro";
-    $dbuser = "registro-user";
+    $dbuser = "admin";
     $dbpassword = "user1";
 
     try {
