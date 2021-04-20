@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['valido'])) {
+if (!isset($_SESSION['valido'])) {
         header("Location: index.php");
 }
 
