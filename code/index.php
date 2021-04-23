@@ -47,7 +47,7 @@
 				<input type="hidden" name="super-secreto" value="valor super secreto">
 
 					<span class="login100-form-title p-b-59">
-						Sign Up
+						Sign Upp
 					</span>
 
 
