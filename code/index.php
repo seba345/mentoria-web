@@ -94,7 +94,9 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
                     <td><?= $user['user_name']?></td>
                     <td><?= $user['email']?> </td> 
                     <td>
-                        <a href="view.php"><button class="btn btn-primary btn-sm" method="POST" action="view.php">View</button></a>
+                        <!-- <a href="view.php"><button class="btn btn-primary btn-sm" method="POST" action="view.php">View</button></a>
+                        // <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a> -->
+                       <button class="btn btn-primary btn-sm" method="POST" action="view.php">View</button>
                         <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
                         <button class="btn btn-sm">Delete</button>
                     </td>
