@@ -13,6 +13,18 @@ try {
     echo $e->getMessage();
 }
 
+
+// Preparar la SELECT
+$sql ="SELECT id, full_name, user_name, email
+       FROM users";
+// stament
+$stmt = $db->prepare($sql);
+
+$stmt->execute();
+
+
+$users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!doctype html>
@@ -60,7 +72,7 @@ try {
             </div>
         </nav>
     </div>
-
+<form method="POST">
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Listado de Usuarios</h1>
@@ -93,6 +105,8 @@ try {
             </table>
         </div>
     </main>
+</form>      
+       
        
     <footer class="footer mt-auto py-3">
         <div class="container pb-5">
