@@ -60,7 +60,7 @@ try {
             </div>
         </nav>
     </div>
-<form method="POST">   
+
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Listado de Usuarios</h1>
@@ -93,7 +93,7 @@ try {
             </table>
         </div>
     </main>
-</form>          
+       
     <footer class="footer mt-auto py-3">
         <div class="container pb-5">
             <hr>
