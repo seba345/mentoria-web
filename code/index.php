@@ -63,7 +63,6 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             </div>
         </nav>
     </div>
-<form method="POST" action="view.php">
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Listado de Usuarios</h1>
@@ -88,7 +87,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
                         <!-- <a href="view.php"><button class="btn btn-primary btn-sm" method="POST" action="view.php">View</button></a>
                         // <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a> -->
                 
-                        <a href="view.php?id='.$user['id'].'"><button class="btn btn-primary btn-sm" >View</button></a>
+                        <a href="view.php?id=$user['full_name']"><button class="btn btn-primary btn-sm" >View</button></a>
                        
                         <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
                         <button class="btn btn-sm">Delete</button>
@@ -100,7 +99,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             </table>
         </div>
     </main>
-</form>
+
        
        
     <footer class="footer mt-auto py-3">

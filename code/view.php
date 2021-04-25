@@ -46,10 +46,10 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-           <?= $nik = mysqli_real_Escape_string($con,(STRIP_TAGS($_GET["id"],ENT_QUOTES )));?>
+           
 
             <h1>View User Detalle</h1>
-            <p><?= $nik ?></p>
+            <p><?= $_GET["full_name"] ?></p>
             <p>Name: Pisyek</p>
             <p><?= $_GET["id"] ?> </p>
             <p>Email: pisyek@gmail.com</p>
