@@ -88,7 +88,7 @@ foreach ($users as $user) {
             </div>
         </nav>
     </div>
-        
+<form method="POST">   
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Listado de Usuarios</h1>
@@ -108,7 +108,7 @@ foreach ($users as $user) {
                     <td><?= $user['id'] ?></td>
                     <td><?= $user['full_name']?></td>
                     <td><?= $user['user_name']?></td>
-                    <td><?= $user['email']?> </td>
+                    <td><?= $user['email']?> </td> 
                     <td>
                         <a href="view.php"><button class="btn btn-primary btn-sm">View</button></a>
                         <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
@@ -116,11 +116,12 @@ foreach ($users as $user) {
                     </td>
                     </tr>
                 <?php endforeach; ?>
+             
                 </tbody>
             </table>
         </div>
     </main>
-      
+</form>          
     <footer class="footer mt-auto py-3">
         <div class="container pb-5">
             <hr>

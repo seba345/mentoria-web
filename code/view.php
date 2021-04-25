@@ -46,8 +46,10 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
+           
             <h1>View User Detail</h1>
             <p>Name: Pisyek</p>
+            <p><?= print$_POST["full_name"] ?> </p>
             <p>Email: pisyek@gmail.com</p>
         </div>
     </main>
