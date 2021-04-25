@@ -1,3 +1,48 @@
+<?php
+
+$dbname = "registro";
+$dbuser = "admin";
+$dbpassword = "user1";
+
+try {
+    $dsn = "mysql:host=localhost;dbname=$dbname";
+    $db = new PDO($dsn, $dbuser, $dbpassword);
+    echo "Correcto";
+
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}
+
+
+
+$sql ="SELECT id, full_name, user_name, email
+       FROM users";
+// stament
+$stmt = $db->prepare($sql);
+
+$stmt->execute();
+
+
+$users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
+echo '<table border="1">
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE COMPLETO</th>
+            <th>USUARIO</th>
+            <th>CORREO</th>
+        </th>';
+            
+foreach ($users as $user) {
+    echo '<tr>
+            <th>' .$user['id']. '</th>
+            <th>' .$user['full_name']. '</th>
+            <th>' .$user['user_name']. '</th>
+            <th>' .$user['email']. '</th>
+          </th>';
+};
+?>
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -10,7 +55,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
-    <title>List of User</title>
+    <title>Listado Usuarios</title>
    
   </head>
   <body class="d-flex flex-column h-100">
@@ -46,7 +91,7 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>List of User</h1>
+            <h1>Listado de Usuarios</h1>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
