@@ -96,23 +96,29 @@ foreach ($users as $user) {
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">NOMBRE COMPLETO</th>
+                    <th scope="col">USUARIO</th>
+                    <th scope="col">CORREO</th>
+                    <th scope="col">Accion</th>
                     </tr>
                 </thead>
                 <tbody>
+               <?php foreach ($users as $user): ?>
                     <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                    <td><?= $user['id'] ?></td>
+                    <td><?= $user['full_name']?></td>
+                    <td><?= $user['user_name']?></td>
+                    <td><?= $user['email']?> </td>
                     <td>
                         <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
                         <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
                         <button class="btn btn-sm">Delete</button>
                     </td>
                     </tr>
-                    <tr>
+                <?php endforeach; ?>
+                  <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
