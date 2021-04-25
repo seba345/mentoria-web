@@ -50,6 +50,7 @@
 
             <h1>View User Detalle</h1>
             <p><?= $_GET["full_name"] ?></p>
+            <p><?= $_GET['full_name'] ?></p>
             <p>Name: Pisyek</p>
             <p><?= $_GET["id"] ?> </p>
             <p>Email: pisyek@gmail.com</p>
