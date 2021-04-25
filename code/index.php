@@ -63,6 +63,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             </div>
         </nav>
     </div>
+    <form METHOD="GET">
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Listado de Usuarios</h1>
@@ -99,7 +100,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             </table>
         </div>
     </main>
-
+    </form>
        
        
     <footer class="footer mt-auto py-3">
