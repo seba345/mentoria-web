@@ -49,7 +49,7 @@
            
             <h1>View User Detail</h1>
             <p>Name: Pisyek</p>
-            <p><?= $_POST["full_name"] ?> </p>
+            <p><?= $_GET["id"] ?> </p>
             <p>Email: pisyek@gmail.com</p>
         </div>
     </main>
