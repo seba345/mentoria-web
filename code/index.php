@@ -1,17 +1,8 @@
 <?php
 
-$dbname = "registro";
-$dbuser = "admin";
-$dbpassword = "user1";
+require "util/conected.php";
+$db =connectDB();
 
-try {
-    $dsn = "mysql:host=localhost;dbname=$dbname";
-    $db = new PDO($dsn, $dbuser, $dbpassword);
-   // echo "Correcto";
-
-} catch (PDOException $e) {
-    echo $e->getMessage();
-}
 
 
 // Preparar la SELECT
@@ -72,7 +63,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             </div>
         </nav>
     </div>
-
+<form method="POST">
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Listado de Usuarios</h1>
@@ -96,9 +87,9 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
                     <td>
                         <!-- <a href="view.php"><button class="btn btn-primary btn-sm" method="POST" action="view.php">View</button></a>
                         // <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a> -->
-                        <form class="vista"method="POST" action="view.php">
-                        <button class="btn btn-primary btn-sm" >View</button></a>
-                        </form>
+                
+                        <a href="view.php"><button class="btn btn-primary btn-sm" >View</button></a>
+                       
                         <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
                         <button class="btn btn-sm">Delete</button>
                     </td>
@@ -109,7 +100,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             </table>
         </div>
     </main>
-   
+</form>
        
        
     <footer class="footer mt-auto py-3">
