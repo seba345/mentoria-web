@@ -95,7 +95,6 @@ foreach ($users as $user) {
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
                     <th scope="col">ID</th>
                     <th scope="col">NOMBRE COMPLETO</th>
                     <th scope="col">USUARIO</th>
@@ -106,14 +105,13 @@ foreach ($users as $user) {
                 <tbody>
                <?php foreach ($users as $user): ?>
                     <tr>
-                    <th scope="row">1</th>
                     <td><?= $user['id'] ?></td>
                     <td><?= $user['full_name']?></td>
                     <td><?= $user['user_name']?></td>
                     <td><?= $user['email']?> </td>
                     <td>
-                        <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
-                        <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
+                        <a href="view.php"><button class="btn btn-primary btn-sm">View</button></a>
+                        <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
                         <button class="btn btn-sm">Delete</button>
                     </td>
                     </tr>
