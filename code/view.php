@@ -18,7 +18,7 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 
 
-$users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+$user = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
