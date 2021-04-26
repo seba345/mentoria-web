@@ -6,8 +6,6 @@ $db =connectDB();
 
 
 // Preparar la SELECT
-$sql ="SELECT id, full_name, user_name, email
-       FROM users";
 
 $id = $_GET['id'];
 $sql ="SELECT id, full_name, user_name, email FROM users
@@ -18,7 +16,7 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 
 
-$user = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+$users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -71,12 +69,12 @@ $user = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     <main role="main" class="flex-shrink-0">
         <div class="container">
            
-
+        <?php foreach ($users as $user): ?>
             <h1>Detalle del Usuario</h1>
             <p>Nombre:  <?=$user['full_name'] ?></p>
             <p>Usuario:  <?=$user['user_name'] ?></p>
             <p>Correo:  <?=$user['email'] ?></p>
-            
+            <?php endforeach; ?>
         </div>
     </main>
     <a href="index.php"><button class="btn btn-outline-primary btn-sm">Volver inicio</button></a>
