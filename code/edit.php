@@ -26,7 +26,7 @@ $stmt = $db->prepare($sql);
     $stmt->execute();
 
 //}
-
+echo "Actualziado";
 }
 else{
 	echo "no se ha enviado la informacion";
@@ -102,11 +102,11 @@ $users = $stmt1 -> fetchAll(PDO::FETCH_ASSOC);
                 <div class="form-group">
                 <?php foreach ($users as $user): ?>
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" value="<?=$user['full_name'] ?>" >
+                    <input type="text" class="form-control" name="nombre" value="<?=$user['full_name'] ?>" >
                     <label for="name">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" value="<?=$user['user_name'] ?>" >
+                    <input type="text" class="form-control" name="usuario" value="<?=$user['user_name'] ?>" >
                     <label for="name">Correo</label>
-                    <input type="text" class="form-control" id="mail" value="<?=$user['email'] ?>" >
+                    <input type="text" class="form-control" name="mail" value="<?=$user['email'] ?>" >
                     <?php endforeach; ?>
                     
                 </div>
