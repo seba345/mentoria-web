@@ -101,11 +101,11 @@ $users = $stmt1 -> fetchAll(PDO::FETCH_ASSOC);
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" value="<?=$user['full_name'] ?>" >
+                    <input type="text" class="form-control" id="nombre" value="<?=$users['full_name'] ?>" >
                     <label for="name">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" value="<?=$user['user_name'] ?>" >
+                    <input type="text" class="form-control" id="usuario" value="<?=$users['user_name'] ?>" >
                     <label for="name">Correo</label>
-                    <input type="text" class="form-control" id="mail" value="<?=$user['email'] ?>" >
+                    <input type="text" class="form-control" id="mail" value="<?=$users['email'] ?>" >
                     
                 </div>
                 <button type="submit" class="btn btn-primary" name="actualizar">Actualizar</button>
