@@ -1,3 +1,53 @@
+<?php
+
+require "util/conected.php";
+$db =connectDB();
+
+$id = $_GET['id'];
+if (isset($_POST["actualizar"])){
+	$nombre = $_POST["nombre"];
+	$usuario = $_POST["usuario"];
+	$mail = $_POST["mail"];
+	
+    $sql ="UPDATE users SET full_name=:full_name, user_name=:user_name, email=:email 
+    WHERE id = :id";
+    
+
+// stament
+$stmt = $db->prepare($sql);
+
+//foreach ($users as $user){   
+
+    $stmt->bindParam(':full_name', $nombre);
+    $stmt->bindParam(':user_name', $usuario);
+    $stmt->bindParam(':email', $mail);
+                               
+    $stmt->execute();
+
+//}
+
+}
+else{
+	echo "no se ha enviado la informacion";
+}
+
+// Preparar la SELECT
+
+$id = $_GET['id'];
+$sql1 ="SELECT id, full_name, user_name, email FROM users
+WHERE id = :id";
+
+// stament
+$stmt1 = $db->prepare($sql1);
+$stmt1->bindParam(':id', $id);
+
+$stmt1->execute();
+
+$users = $stmt1 -> fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -49,11 +99,15 @@
             <h1>Edit User</h1>
             <form action="" method="POST">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" value="Nama saya Pisyek" placeholder="Enter name">
-                    <small class="form-text text-muted">Help message here.</small>
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" value="<?=$user['full_name'] ?>" >
+                    <label for="name">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" value="<?=$user['user_name'] ?>" >
+                    <label for="name">Correo</label>
+                    <input type="text" class="form-control" id="mail" value="<?=$user['email'] ?>" >
+                    
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="actualizar">Actualizar</button>
             </form>
         </div>
     </main>
