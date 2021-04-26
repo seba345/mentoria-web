@@ -22,6 +22,7 @@ $stmt = $db->prepare($sql);
     $stmt->bindParam(':full_name', $nombre);
     $stmt->bindParam(':user_name', $usuario);
     $stmt->bindParam(':email', $mail);
+    $stmt->bindParam(':id', $id);
                                
     $stmt->execute();
 
