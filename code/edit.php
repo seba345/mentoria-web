@@ -4,6 +4,7 @@ require "util/conected.php";
 $db =connectDB();
 
 $id = $_GET['id'];
+
 if (isset($_POST["actualizar"])){
 	$nombre = $_POST["nombre"];
 	$usuario = $_POST["usuario"];
@@ -33,7 +34,7 @@ else{
 
 // Preparar la SELECT
 
-$id = $_GET['id'];
+// $id = $_GET['id'];
 $sql1 ="SELECT id, full_name, user_name, email FROM users
 WHERE id = :id";
 
