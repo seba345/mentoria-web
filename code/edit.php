@@ -58,6 +58,8 @@
         </div>
     </main>
       
+
+    <a href="index.php"><button class="btn btn-outline-primary btn-sm">Volver inicio</button></a>
     <footer class="footer mt-auto py-3">
         <div class="container pb-5">
             <hr>

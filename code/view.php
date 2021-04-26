@@ -1,3 +1,27 @@
+<?php
+
+require "util/conected.php";
+$db =connectDB();
+
+
+
+// Preparar la SELECT
+$sql ="SELECT id, full_name, user_name, email
+       FROM users";
+
+$id = $_GET['id'];
+$sql ="SELECT id, full_name, user_name, email FROM users
+WHERE id = :id";
+// stament
+$stmt = $db->prepare($sql);
+
+$stmt->execute();
+
+
+$users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -48,19 +72,19 @@
         <div class="container">
            
 
-            <h1>View User Detalle</h1>
-            <p><?= $_GET['full_name'] ?></p>
-            <p>Name: Pisyek</p>
-            <p><?= $_GET['id'] ?> </p>
-            <p>Email: pisyek@gmail.com</p>
+            <h1>Detalle del Usuario</h1>
+            <p>Nombre:  <?=$user['full_name'] ?></p>
+            <p>Usuario:  <?=$user['user_name'] ?></p>
+            <p>Correo:  <?=$user['email'] ?></p>
+            
         </div>
     </main>
-      
+    <a href="index.php"><button class="btn btn-outline-primary btn-sm">Volver inicio</button></a>
     <footer class="footer mt-auto py-3">
         <div class="container pb-5">
             <hr>
             <span class="text-muted">
-                    Copyright &copy; 2019 | <a href="https://pisyek.com">Pisyek.com</a>
+                    Copyright &copy; 2021 | <a href="https://pisyek.com">segic.com</a>
             </span>
         </div>
     </footer>
