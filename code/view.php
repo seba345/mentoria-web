@@ -10,6 +10,8 @@ $db =connectDB();
 $id = $_GET['id'];
 $sql ="SELECT id, full_name, user_name, email FROM users
 WHERE id = :id";
+
+$stmt->bindParam(':id', $id);
 // stament
 $stmt = $db->prepare($sql);
 
