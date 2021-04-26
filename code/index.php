@@ -90,7 +90,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
                 
                         <a href="view.php?id=<?= $user['id']?>"><button class="btn btn-primary btn-sm" >View</button></a>
                        
-                        <a href="edit.php"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
+                        <a href="edit.php?id=<?= $user['id']?>"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
                         <button class="btn btn-sm">Delete</button>
                     </td>
                     </tr>

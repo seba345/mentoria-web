@@ -5,6 +5,7 @@ $db =connectDB();
 
 
 if (isset($_POST["actualizar"])){
+    $id = $_GET['id'];
 	$nombre = $_POST["nombre"];
 	$usuario = $_POST["usuario"];
 	$mail = $_POST["mail"];
