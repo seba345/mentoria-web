@@ -100,12 +100,14 @@ $users = $stmt1 -> fetchAll(PDO::FETCH_ASSOC);
             <h1>Edit User</h1>
             <form action="" method="POST">
                 <div class="form-group">
+                <?php foreach ($users as $user): ?>
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" value="<?=$users['full_name'] ?>" >
+                    <input type="text" class="form-control" id="nombre" value="<?=$user['full_name'] ?>" >
                     <label for="name">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" value="<?=$users['user_name'] ?>" >
+                    <input type="text" class="form-control" id="usuario" value="<?=$user['user_name'] ?>" >
                     <label for="name">Correo</label>
-                    <input type="text" class="form-control" id="mail" value="<?=$users['email'] ?>" >
+                    <input type="text" class="form-control" id="mail" value="<?=$user['email'] ?>" >
+                    <?php endforeach; ?>
                     
                 </div>
                 <button type="submit" class="btn btn-primary" name="actualizar">Actualizar</button>
