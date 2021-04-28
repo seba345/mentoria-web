@@ -97,7 +97,7 @@ else{
                     <label for="name">Correo</label>
                     <input type="password" class="form-control" name="password">
                 </div>
-                <button type="submit" class="btn btn-primary" name="crar">Crear</button>
+                <button type="submit" class="btn btn-primary" name="crear">Crear</button>
                 
             </form>
             <a href="index.php"><button class="btn btn-outline-primary btn-sm">Volver inicio</button></a>
