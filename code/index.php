@@ -51,10 +51,10 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
                         <a class="nav-link" href="create.php">Crear Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" >FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://pisyek.com/contact">Help</a>
+                        <a class="nav-link" >Help</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-md-0">

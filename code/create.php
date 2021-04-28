@@ -1,3 +1,42 @@
+<?php
+require "util/conected.php";
+$db =connectDB();
+
+
+if (isset($_POST["crear"])){
+	$nombre = $_POST["nombre"];
+	$usuario = $_POST["usuario"];
+	$mail = $_POST["mail"];
+    $password1 = $_POST["password"];
+	
+    $sql ="INSERT INTO users
+(full_name, email, user_name, password)
+VALUES
+(:full_name, :email, :user_name, :password)";
+    
+
+// stament
+$stmt = $db->prepare($sql);
+
+//foreach ($users as $user){   
+
+    $stmt->bindParam(':full_name', $nombre);
+    $stmt->bindParam(':email', $mail);
+    $stmt->bindParam(':user_name', $usuario);
+    $password = password_hash($password1, PASSWORD_DEFAULT);
+    $stmt->bindParam(':password', $password);
+                               
+    $stmt->execute();
+
+//}
+echo "Actualizado";
+}
+else{
+	echo "no se ha enviado la informacion";
+}
+
+?>
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -49,12 +88,20 @@
             <h1>Create New User</h1>
             <form action="" method="POST">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name">
-                    <small class="form-text text-muted">Help message here.</small>
+                <label for="name">Nombre</label>
+                    <input type="text" class="form-control" name="nombre">
+                    <label for="name">Usuario</label>
+                    <input type="text" class="form-control" name="usuario">
+                    <label for="name">Correo</label>
+                    <input type="text" class="form-control" name="mail">
+                    <label for="name">Correo</label>
+                    <input type="password" class="form-control" name="password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="crar">Crear</button>
+                
             </form>
+            <a href="index.php"><button class="btn btn-outline-primary btn-sm">Volver inicio</button></a>
+
         </div>
     </main>
       
