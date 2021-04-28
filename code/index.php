@@ -48,7 +48,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="create.html">Create</a>
+                        <a class="nav-link" href="create.php">Create</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">FAQ</a>

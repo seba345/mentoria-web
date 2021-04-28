@@ -27,7 +27,7 @@ $stmt = $db->prepare($sql);
     $stmt->execute();
 
 //}
-echo "Actualziado";
+echo "Actualizado";
 }
 else{
 	echo "no se ha enviado la informacion";
@@ -45,7 +45,7 @@ $stmt1->bindParam(':id', $id);
 
 $stmt1->execute();
 
-$users = $stmt1 -> fetchAll(PDO::FETCH_ASSOC);
+$user = $stmt1 -> fetch();
 
 ?>
 
@@ -101,14 +101,14 @@ $users = $stmt1 -> fetchAll(PDO::FETCH_ASSOC);
             <h1>Edit User</h1>
             <form action="" method="POST">
                 <div class="form-group">
-                <?php foreach ($users as $user): ?>
+        
                     <label for="name">Nombre</label>
                     <input type="text" class="form-control" name="nombre" value="<?=$user['full_name'] ?>" >
                     <label for="name">Usuario</label>
                     <input type="text" class="form-control" name="usuario" value="<?=$user['user_name'] ?>" >
                     <label for="name">Correo</label>
                     <input type="text" class="form-control" name="mail" value="<?=$user['email'] ?>" >
-                    <?php endforeach; ?>
+              
                     
                 </div>
                 <button type="submit" class="btn btn-primary" name="actualizar">Actualizar</button>

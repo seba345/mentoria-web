@@ -19,7 +19,7 @@ $stmt->bindParam(':id', $id);
 $stmt->execute();
 
 
-$users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+$user = $stmt -> fetch();
 
 ?>
 
@@ -72,12 +72,12 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     <main role="main" class="flex-shrink-0">
         <div class="container">
            
-        <?php foreach ($users as $user): ?>
+        
             <h1>Detalle del Usuario</h1>
             <p>Nombre:  <?=$user['full_name'] ?></p>
             <p>Usuario:  <?=$user['user_name'] ?></p>
             <p>Correo:  <?=$user['email'] ?></p>
-            <?php endforeach; ?>
+   
         </div>
     </main>
     <a href="index.php"><button class="btn btn-outline-primary btn-sm">Volver inicio</button></a>
