@@ -85,7 +85,7 @@ $user = $stmt -> fetch();
         <div class="container pb-5">
             <hr>
             <span class="text-muted">
-            Copyright &copy; 2021 | <a href="https://segic.com">segic.com</a>
+            Copyright &copy; 2021 | <a href="https://segic.cl">segic.com</a>
             </span>
         </div>
     </footer>
