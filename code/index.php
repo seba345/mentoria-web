@@ -98,6 +98,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
              
                 </tbody>
             </table>
+            <a href="excel.php"><button class="btn btn-outline-primary btn-sm">Exportar excel</button></a>
         </div>
     </main>
 
@@ -107,7 +108,7 @@ $users = $stmt -> fetchAll(PDO::FETCH_ASSOC);
         <div class="container pb-5">
             <hr>
             <span class="text-muted">
-            Copyright &copy; 2021 | <a href="https://segic.cl" target="_blank">segic.com</a>
+            Copyright &copy; 2021 | <a href="https://segic.cl" target="_blank">segic.cl</a>
             </span>
         </div>
     </footer>
