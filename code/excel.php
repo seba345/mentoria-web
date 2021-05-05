@@ -32,10 +32,10 @@ $sheet->setCellValue('A1', $user['id']);
 $sheet->setCellValue('B1', $user['full_name']);
 $sheet->setCellValue('C1', $user['user_name']);
 $sheet->setCellValue('D1', $user['email']);
-
+$writer = new Xlsx($spreadsheet);
 }
 
-$writer = new Xlsx($spreadsheet);
+
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 header('Content-Disposition: attachment; filename="Usuarios.xlsx"');
 $writer->save('php://output');
