@@ -39,3 +39,4 @@ header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetm
 header('Content-Disposition: attachment; filename="Usuarios.xlsx"');
 $writer->save('php://output');
 
+?>
