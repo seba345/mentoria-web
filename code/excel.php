@@ -29,9 +29,9 @@ $sheet = $spreadsheet->getActiveSheet();
 foreach ($users as $key =>$user){
 $acum = $key +1;
 $sheet->setCellValue('A'.$acum, $user['id']);
-$sheet->setCellValue('B1'.$acum, $user['full_name']);
-$sheet->setCellValue('C1'.$acum, $user['user_name']);
-$sheet->setCellValue('D1'.$acum, $user['email']);
+$sheet->setCellValue('B'.$acum, $user['full_name']);
+$sheet->setCellValue('C'.$acum, $user['user_name']);
+$sheet->setCellValue('D'.$acum, $user['email']);
 
 }
 $writer = new Xlsx($spreadsheet);
