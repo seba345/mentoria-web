@@ -1,0 +1,15 @@
+{
+    "name": "sdiaz/phpmvc-framework",
+    "authors": [
+        {
+            "name": "sebastian diaz",
+            "email": "sebastian.diaz@segic.usach.cl"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
