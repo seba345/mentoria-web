@@ -12,7 +12,7 @@ class Router
     public function resolve()
     {
         echo '<pre>';
-        var_dump($_server);
+        var_dump($_SERVER);
         echo '</pre>';
         exit;
     }
