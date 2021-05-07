@@ -48,16 +48,16 @@
         <div class="container">
            
         
-            <h1>Detalle del Usuario</h1>
-            <p>Nombre:   ?></p>
-            <p>Usuario:   ?></p>
-            <p>Correo:  ?></p>
+            <h1>Trabajos Realizados</h1>
+            <p><a href="Crud/index.php"><button class="btn btn-outline-primary btn-sm">Crud</button></a></p>
+            <p><a href="excel/index.php"><button class="btn btn-outline-primary btn-sm">Excel</button></a></p>
+            <p><a href="code/index.php"><button class="btn btn-outline-primary btn-sm">Framework</button></a></p>
    
         </div>
     </main>
-    <a href="Crud/index.php"><button class="btn btn-outline-primary btn-sm">Crud</button></a>
-    <a href="excel/index.php"><button class="btn btn-outline-primary btn-sm">Excel</button></a>
-    <a href="code/index.php"><button class="btn btn-outline-primary btn-sm">Framework</button></a>
+    
+    
+
 
     <footer class="footer mt-auto py-3">
         <div class="container pb-5">
