@@ -26,7 +26,7 @@ class Router
         $method = $this->request->getMethod();
 
         $callback= $this->routes[$method][$path] ?? false;
-       // print_r($this->routes);
+       print_r($this->routes);
 
         //var_dump($path);
        // var_dump($method);
