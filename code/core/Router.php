@@ -25,8 +25,10 @@ class Router
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
 
-        print_r($this->routes);
+        $callback= $this->routes[$method][$path];
+        //print_r($this->routes);
         //var_dump($path);
         //var_dump($method);
+        echo call_user_func($callback);
     }
 }
