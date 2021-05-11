@@ -28,8 +28,8 @@ class Router
         $callback= $this->routes[$method][$path] ?? false;
        print_r($this->routes);
 
-        //var_dump($path);
-       // var_dump($method);
+        var_dump($path);
+        var_dump($method);
         if ($callback === false){
             echo "not found";
             exit;
