@@ -4,11 +4,11 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $app = new \app\core\Aplication();
 
-$app->router->get('/', function(){
+$app->router->get('/code/', function(){
     return "Hola Mundo";
 });
 
-$app->router->get('/contact', function(){
+$app->router->get('/code/contact', function(){
     return "Contact";
 });
 
