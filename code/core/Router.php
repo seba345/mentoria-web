@@ -26,6 +26,8 @@ class Router
         $method = $this->request->getMethod();
 
         $callback= $this->routes[$method][$path] ?? false;
+        print_r($this->routes);
+
         var_dump($path);
         var_dump($method);
         if ($callback === false){
@@ -33,8 +35,8 @@ class Router
             exit;
         }
         //print_r($this->routes);
-        var_dump($path);
-        var_dump($method);
-        echo call_user_func($callback);
+        //var_dump($path);
+        //var_dump($method);
+       // echo call_user_func($callback);
     }
 }
