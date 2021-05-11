@@ -8,7 +8,7 @@ $app->router->get('/code/', function(){
     return "Hola Mundo";
 });
 
-$app->router->get('/code/contact', function(){
+$app->router->get('/code/contacto', function(){
     return "Contact";
 });
 
