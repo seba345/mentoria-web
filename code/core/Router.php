@@ -30,10 +30,12 @@ class Router
 
         var_dump($path);
         var_dump($method);
-        if ($callback === false){
+       /* if ($callback === false){
             echo "not found";
             exit;
-        }
+        }*/
+
+        
         //print_r($this->routes);
         //var_dump($path);
         //var_dump($method);
