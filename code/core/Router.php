@@ -31,14 +31,14 @@ class Router
         var_dump($path);
         var_dump($method);
         if ($callback === false){
-            echo "not found";
-            exit;
+            return "not found";
+   
         }
 
 
         //print_r($this->routes);
         //var_dump($path);
         //var_dump($method);
-        echo call_user_func($callback);
+        return call_user_func($callback);
     }
 }
