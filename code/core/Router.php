@@ -5,7 +5,7 @@ class Router
     public request $request;
     protected array $routes =[];
 
-    public function __construct(\app\core\Request $request)
+    public function __construct(\app\core\request $request)
     {
         $this ->request = $request;
     }
