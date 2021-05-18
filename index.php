@@ -51,7 +51,7 @@
             <h1>Trabajos Realizados</h1>
             <p><a href="Crud/index.php"><button class="btn btn-outline-primary btn-sm">Crud</button></a></p>
             <p><a href="excel/index.php"><button class="btn btn-outline-primary btn-sm">Excel</button></a></p>
-            <p><a href="code/index.php"><button class="btn btn-outline-primary btn-sm">Framework</button></a></p>
+            <p><a href="code/public/index.php"><button class="btn btn-outline-primary btn-sm">Framework</button></a></p>
    
         </div>
     </main>
