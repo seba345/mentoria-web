@@ -32,13 +32,20 @@ class Router
         var_dump($method);
         if ($callback === false){
             return "not found";
-   
+   //principios SOLID
         }
-
+                if (is_string($callback)){
+                    return $this->renderView($callback);   
+                }
 
         //print_r($this->routes);
         //var_dump($path);
         //var_dump($method);
         return call_user_func($callback);
+    }
+
+    public function renderView($view)
+    { //interpolacion 
+        include_once __DIR__ . "../views/$view.php";
     }
 }
