@@ -26,10 +26,10 @@ class Router
         $method = $this->request->getMethod();
 
         $callback= $this->routes[$method][$path] ?? false;
-       print_r($this->routes);
+      // print_r($this->routes);
 
-        var_dump($path);
-        var_dump($method);
+       // var_dump($path);
+      //  var_dump($method);
         if ($callback === false){
             return "not found";
    //principios SOLID
@@ -46,6 +46,6 @@ class Router
 
     public function renderView($view)
     { //interpolacion 
-        include_once __DIR__ . "../views/$view.php";
+        include_once __DIR__ . "/../views/$view.php";
     }
 }
