@@ -34,9 +34,9 @@ class Router
             return "not found";
    //principios SOLID
         }
-                if (is_string($callback)){
+     if (is_string($callback)){
                     return $this->renderView($callback);   
-                }
+        }
 
         //print_r($this->routes);
         //var_dump($path);

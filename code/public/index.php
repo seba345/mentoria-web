@@ -7,9 +7,7 @@ $app = new \app\core\Aplication();
 
 $app->router->get('/code/public/contacto', 'contact');
  
-$app->router->get('/code/public/', function(){
-    return "Hola Mundo";
-});
+$app->router->get('/code/public/', 'home');
 
 
 $app->run();
