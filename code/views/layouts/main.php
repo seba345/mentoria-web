@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-  {{content}}
+    {{content}}
 
     <!-- Optional JavaScript; choose one of the two! -->
 
