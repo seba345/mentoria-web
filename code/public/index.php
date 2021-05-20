@@ -3,11 +3,9 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 use app\core\Aplication;
 
-echo __DIR__;
-echo "<br>";
-echo dirname(__DIR__);
 
-$app = new Aplication();
+
+$app = new Aplication(dirname(__DIR__));
 
 
 //$app->router->get('/code/public/contact', 'contact');
