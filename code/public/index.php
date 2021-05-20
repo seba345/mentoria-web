@@ -4,7 +4,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use app\core\Aplication;
 
 echo __DIR__;
-echo "\br";
+echo "<br>";
 echo dirname(__DIR__);
 
 $app = new Aplication();
