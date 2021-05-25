@@ -33,8 +33,12 @@ class Router
 
         $callback= $this->routes[$method][$path] ?? false;
        print_r($this->routes);
-
+       echo '<br>';
         var_dump($path);
+        echo '</br>';
+        echo '<br>';
+        var_dump($callback);
+        echo '</br>';
         var_dump($method);
         exit;
         if ($callback === false){
