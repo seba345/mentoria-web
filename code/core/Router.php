@@ -32,7 +32,7 @@ class Router
         $method = $this->request->getMethod();
 
         $callback= $this->routes[$method][$path] ?? false;
-      /* print_r($this->routes);
+       print_r($this->routes);
        echo '<br>';
         var_dump($path);
         echo '</br>';
@@ -40,7 +40,7 @@ class Router
         var_dump($callback);
         echo '</br>';
         var_dump($method);
-        exit;*/
+        exit;
         if ($callback == false){
             //Aplication::$app->response->setStatusCode(404);
             $this->response->setStatusCode(404);
