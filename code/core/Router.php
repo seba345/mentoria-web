@@ -6,7 +6,7 @@ class Router
     public Response $response;
     protected array $routes =[];
 
-    public function __construct(\app\core\request $request,Response $response)
+    public function __construct(request $request,Response $response)
     {
         $this ->request = $request;
         $this->response = $response;
