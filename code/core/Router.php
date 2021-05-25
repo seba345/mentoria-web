@@ -23,19 +23,19 @@ class Router
 
     public function resolve()
     {
-       /* echo '<pre>';
+        echo '<pre>';
         var_dump($_SERVER);
         echo '</pre>';
-        exit;*/
+        exit;
 
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
 
         $callback= $this->routes[$method][$path] ?? false;
-      // print_r($this->routes);
+       print_r($this->routes);
 
-       // var_dump($path);
-      //  var_dump($method);
+        var_dump($path);
+        var_dump($method);
         if ($callback === false){
             //Aplication::$app->response->setStatusCode(404);
             $this->response->setStatusCode(404);
@@ -47,8 +47,8 @@ class Router
                     return $this->renderView($callback);   
         }
 
-        //print_r($this->routes);
-        //var_dump($path);
+       // print_r($this->routes);
+       // var_dump($path);
         //var_dump($method);
         return call_user_func($callback);
     }
@@ -64,8 +64,8 @@ class Router
     { //interpolacion 
 
         $layoutContent = $this->layoutContent();
-        $viewContent = $this->renderOnlyView($view);
-        return str_replace('{{content}}',$viewContent,$layoutContent);
+        //$viewContent = $this->renderOnlyView($view);
+       // return str_replace('{{content}}',$viewContent,$layoutContent);
        
     }
 
