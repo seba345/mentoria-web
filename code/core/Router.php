@@ -16,10 +16,10 @@ class Router
     {
         $this->routes['get'][$path] = $callback;
     }
-    public function post($path, $callback)
+    /*public function post($path, $callback)
     {
         $this->routes['post'][$path] = $callback;
-    }
+    }*/
 
     public function resolve()
     {
@@ -37,7 +37,8 @@ class Router
        // var_dump($path);
       //  var_dump($method);
         if ($callback === false){
-            Aplication::$app->response->setStatusCode(404);
+            //Aplication::$app->response->setStatusCode(404);
+            $this->response->setStatusCode(404);
             //return $this->renderContent("not found");
             return $this->renderView("_404");
    //principios SOLID
