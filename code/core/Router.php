@@ -32,7 +32,8 @@ class Router
       //  var_dump($method);
         if ($callback === false){
             Aplication::$app->response->setStatusCode(404);
-            return "not found";
+            //return $this->renderContent("not found");
+            return $this->renderView("_404");
    //principios SOLID
         }
      if (is_string($callback)){
@@ -44,7 +45,14 @@ class Router
         //var_dump($method);
         return call_user_func($callback);
     }
+    public function renderContent($viewContent)
+    { //interpolacion 
 
+        $layoutContent = $this->layoutContent();
+//        $viewContent = $this->renderOnlyView($view);
+        return str_replace('{{content}}',$viewContent,$layoutContent);
+       
+    }
     public function renderView($view)
     { //interpolacion 
 
