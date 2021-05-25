@@ -12,10 +12,10 @@ $app = new Aplication(dirname(__DIR__));
  
 //$app->router->get('/code/public/', 'home');
 
-$app->router->get('/code/public/contact', 'contact');
+$app->router->get('/', 'home');
  
-$app->router->get('/code/public/', 'contact');
-$app->router->post('/code/public/contact', function(){
+$app->router->get('/contact', 'contact');
+$app->router->post('/contact', function(){
     return "Procesando IÑnformacion";
 });
 
