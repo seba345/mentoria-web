@@ -3,11 +3,13 @@ namespace app\core;
 class Router
 {
     public request $request;
+    public Response $response;
     protected array $routes =[];
 
-    public function __construct(\app\core\request $request)
+    public function __construct(\app\core\request $request,Response $response)
     {
         $this ->request = $request;
+        $this->response = $response;
     }
 
     public function get($path, $callback)
