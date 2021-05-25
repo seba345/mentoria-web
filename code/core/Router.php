@@ -23,19 +23,20 @@ class Router
 
     public function resolve()
     {
-        echo '<pre>';
-        var_dump($_SERVER);
-        echo '</pre>';
-        exit;
+     //   echo '<pre>';
+       // var_dump($_SERVER);
+       // echo '</pre>';
+      //  exit;
 
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
 
         $callback= $this->routes[$method][$path] ?? false;
-      // print_r($this->routes);
+       print_r($this->routes);
 
-       // var_dump($path);
-       // var_dump($method);
+        var_dump($path);
+        var_dump($method);
+        exit;
         if ($callback === false){
             //Aplication::$app->response->setStatusCode(404);
             $this->response->setStatusCode(404);
