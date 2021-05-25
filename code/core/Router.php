@@ -23,9 +23,9 @@ class Router
 
     public function resolve()
     {
-        //echo '<pre>';
-       // var_dump($_SERVER);
-       // echo '</pre>';
+        echo '<pre>';
+        var_dump($_SERVER);
+        echo '</pre>';
         exit;
 
         $path = $this->request->getPath();
