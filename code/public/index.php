@@ -14,7 +14,7 @@ $app = new Aplication(dirname(__DIR__));
 
 $app->router->get('/', 'home');
  
-$app->router->get('/contact', 'contact');
+$app->router->get('/cont', 'contact');
 
 /*$app->router->post('/contact', function(){
     return "Procesando Informacion";
