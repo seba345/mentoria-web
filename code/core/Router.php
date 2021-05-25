@@ -31,6 +31,7 @@ class Router
        // var_dump($path);
       //  var_dump($method);
         if ($callback === false){
+            Aplication::$app->response->setStatusCode(404);
             return "not found";
    //principios SOLID
         }
