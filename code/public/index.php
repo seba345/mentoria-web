@@ -16,9 +16,9 @@ $app->router->get('/', 'home');
  
 $app->router->get('/cont', 'contact');
 
-/*$app->router->post('/contact', function(){
+$app->router->post('/contact', function(){
     return "Procesando Informacion";
-});*/
+});
 
 
 $app->run();
