@@ -18,8 +18,8 @@ $app->router->post('/cont', function(){
     return "Procesando Informacion";
 });*/
 
-$app->router->get('/', [\app\controller\SiteController::class, 'home']); 
-$app->router->get('/cont', [\app\controller\SiteController::class, 'cont']); 
-$app->router->post('/cont', [\app\controller\SiteController::class, 'handleCont']); 
+$app->router->get('/', [\app\controllers\SiteController::class, 'home']); 
+$app->router->get('/cont', [\app\controllers\SiteController::class, 'cont']); 
+$app->router->post('/cont', [\app\controllers\SiteController::class, 'handleCont']); 
 
 $app->run();
