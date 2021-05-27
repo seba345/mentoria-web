@@ -19,7 +19,7 @@ $app->router->post('/cont', function(){
 });*/
 
 $app->router->get('/', [\app\controllers\SiteController::class, 'home']); 
-$app->router->get('/cont', [\app\controllers\SiteController::class, 'cont']); 
+$app->router->get('/cont', [\app\controllers\SiteController::class, 'contact']); 
 $app->router->post('/cont', [\app\controllers\SiteController::class, 'handleCont']); 
 
 $app->run();

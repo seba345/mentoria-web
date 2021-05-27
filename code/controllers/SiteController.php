@@ -15,7 +15,7 @@ class SiteController extends Controller
     public function cont()
     {
         //return Aplication::$app->router->renderView('contact');
-        return $this->render('cont');
+        return $this->render('contact');
     }
 
     
