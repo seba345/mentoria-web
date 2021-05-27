@@ -3,9 +3,9 @@
 namespace app\controller;
 
 use app\core\Aplication;
-use app\core\controller;
+use app\core\Controller;
 
-class SiteController extends controller
+class SiteController extends Controller
 {
     public function home()
     {
