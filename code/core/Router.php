@@ -51,6 +51,10 @@ class Router
      if (is_string($callback)){
                     return $this->renderView($callback);   
         }
+        if(is_array($callback)){
+            var_dump($callback);
+                exit;
+        }
 
        // print_r($this->routes);
        // var_dump($path);
