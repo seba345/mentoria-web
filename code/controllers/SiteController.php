@@ -12,7 +12,7 @@ class SiteController extends Controller
         return $this->render('home');
     }
 
-    public function cont()
+    public function contact()
     {
         //return Aplication::$app->router->renderView('contact');
         return $this->render('contact');
