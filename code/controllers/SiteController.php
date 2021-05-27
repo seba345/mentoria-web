@@ -1,8 +1,7 @@
 <?php
 
-namespace app\controller;
+namespace app\controllers;
 
-use app\core\Aplication;
 use app\core\Controller;
 
 class SiteController extends Controller
