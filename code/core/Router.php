@@ -51,9 +51,9 @@ class Router
      if (is_string($callback)){
                     return $this->renderView($callback);   
         }
+        //array(2) { [0]=> string(29) "app\controller\SiteController" [1]=> string(4) "home" }
         if(is_array($callback)){
-            var_dump($callback);
-                exit;
+            $callback[0]= new $callback[0]();
         }
 
        // print_r($this->routes);
