@@ -8,12 +8,12 @@ class SiteController
 {
     public function home()
     {
-        Aplication::$app->router->renderView('home');
+        return Aplication::$app->router->renderView('home');
     }
 
     public function cont()
     {
-        Aplication::$app->router->renderView('contact');
+        return Aplication::$app->router->renderView('contact');
     }
 
     
