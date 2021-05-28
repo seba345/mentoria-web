@@ -14,7 +14,7 @@ class SiteController extends Controller
     ];
 
         //return Aplication::$app->router->renderView('home');
-        return $this->render('home',$params);
+        return $this->render('home', $params);
     }
 
     public function contact()
