@@ -3,8 +3,8 @@ namespace app\core;
 
 class controller
 {
-    public function render($view)
+    public function render($view, $params = [])
     {
-        return Aplication::$app->router->renderView($view);
+        return Aplication::$app->router->renderView($view, $params);
     }
 }
