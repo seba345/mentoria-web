@@ -8,13 +8,11 @@ class SiteController extends Controller
 {
     public function home()
     {
-        $params = [
-        'name' => 'Juan Perez',
-        'surname' => 'Perez',
-    ];
-
-        //return Aplication::$app->router->renderView('home');
-        return $this->render('home', $params);
+     //return Aplication::$app->router->renderView('home');
+        return $this->render('home', [
+            'name' => 'Juan ',
+            'surname' => 'Perez',
+        ]);
     }
 
     public function contact()
