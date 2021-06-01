@@ -12,7 +12,7 @@ class AuthController extends Controller
         return $this->render('login');
     }
 
-    public function register(Request $request)
+    public function register(request $request)
     {
         return $this->render('register');
     }
