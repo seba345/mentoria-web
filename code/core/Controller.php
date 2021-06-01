@@ -1,10 +1,10 @@
 <?php
 namespace app\core;
 
-class controller
+class Controller
 {  
     public string $layout ='main';
-    
+
     public function render($view, $params = [])
     {
         return Aplication::$app->router->renderView($view, $params);

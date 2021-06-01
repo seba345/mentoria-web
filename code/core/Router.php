@@ -41,7 +41,7 @@ class Router
         echo '</br>';
         var_dump($method);
         exit;*/
-        if ($callback == false){
+        if ($callback === false){
             //Aplication::$app->response->setStatusCode(404);
             $this->response->setStatusCode(404);
             //return $this->renderContent("not found");

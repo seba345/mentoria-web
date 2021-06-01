@@ -21,13 +21,14 @@ class Request
         }
         public function isPost()
         {
-            return $this->getMethod()=== 'post';
+            return $this->getMethod() === 'post';
         }
 
         public function isGet()
         {
-            return $this->getMethod()=== 'get';
+            return $this->getMethod() === 'get';
         }
+        
         public function getBody()
         {
             $body = [];
