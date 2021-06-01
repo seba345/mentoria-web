@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\core\request;
+use app\core\Request;
 use app\core\Controller;
 use app\models\RegisterModel;
 
@@ -14,7 +14,7 @@ class AuthController extends Controller
         return $this->render('login');
     }
 
-    public function register(request $request)
+    public function register(Request $request)
     {
         $this->setLayout('auth');
 
