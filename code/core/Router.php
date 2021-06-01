@@ -53,7 +53,8 @@ class Router
         }
         //array(2) { [0]=> string(29) "app\controller\SiteController" [1]=> string(4) "home" }
         if(is_array($callback)){
-            $callback[0]= new $callback[0]();
+            Aplication::$app->controller = new $callback[0]();
+            $callback[0]= Aplication::$app->controller;
         }
 
        // print_r($this->routes);

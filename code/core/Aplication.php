@@ -7,7 +7,8 @@ class Aplication
     public Router $router;
     public Request $request;
     public Response $response;
-
+    public Controller $controller;
+    
     public static Aplication $app;
 
     public function __construct($rootPath)
