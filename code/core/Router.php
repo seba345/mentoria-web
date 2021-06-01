@@ -59,7 +59,7 @@ class Router
        // print_r($this->routes);
        // var_dump($path);
         //var_dump($method);
-        return call_user_func($callback);
+        return call_user_func($callback, $this->request);
     }
     public function renderContent($viewContent)
     { //interpolacion 
