@@ -7,7 +7,7 @@ abstract class Model
     public const RULE_EMAIL = 'email';
     public const RULE_MIN = 'min';
     public const RULE_MAX = 'max';
-    public const RULE_MATCH = 'genia';
+    public const RULE_MATCH = 'match';
 
     public $errors =[];
 
