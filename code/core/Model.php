@@ -37,26 +37,34 @@ abstract class Model
                     //AGREGAR ERROR
                     $this->addError($attribute, self::RULE_REQUIRED);
                 }
-                if($rulename === self::RULE_EMAIL && filter_var($value, FILTER_VALIDATE_EMAIL)){
+                if($rulename === self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)){
                     //AGREGAR ERROR
                     $this->addError($attribute, self::RULE_EMAIL);
                 }
                 if($rulename === self::RULE_MIN && strlen($value)< $rule['min']){
                     //AGREGAR ERROR
-                    $this->addError($attribute, self::RULE_MIN);
+                    $this->addError($attribute, self::RULE_MIN, $rule);
                 }
                 if($rulename === self::RULE_MAX && strlen($value)< $rule['max']){
                     //AGREGAR ERROR
-                    $this->addError($attribute, self::RULE_MAX);
+                    $this->addError($attribute, self::RULE_MAX, $rule);
+                }
+                if($rulename === self::RULE_MATCH && $value != $this->{$rule['match']}){
+                    //AGREGAR ERROR
+                    $this->addError($attribute, self::RULE_MATCH, $rule);
                 }
             }
         }
         return empty($this->errors);
 
     }
-    public function addError($attribute, $rule)
+    public function addError($attribute, $rule, $param = [])
     {
         $message = $this->errorMessages()[$rule] ?? '';
+
+        foreach ($param as $key => $params){
+                $message = str_replace("{{$key}}", $param, $message);
+        }
 
         $this->errors[$attribute][] = $message;
     }
@@ -68,7 +76,7 @@ abstract class Model
         self::RULE_EMAIL => 'This field must be an email',
         self::RULE_MIN => 'Min length of the field must be {min}',
         self::RULE_MAX => 'Min length of the field must be {max}',
-        self::RULE_MATCH => 'match not valid',
+        self::RULE_MATCH => 'match not valid {match}',
         ];
     }
 
