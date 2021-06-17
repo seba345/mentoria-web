@@ -41,7 +41,7 @@ abstract class Model
                     //AGREGAR ERROR
                     $this->addError($attribute, self::RULE_EMAIL);
                 }
-                if($rulename === self::RULE_MIN && strlen($value)< $rule['min']){
+                if($rulename === self::RULE_MIN && strlen($value) < $rule['min']){
                     //AGREGAR ERROR
                     $this->addError($attribute, self::RULE_MIN, $rule);
                 }
@@ -80,4 +80,13 @@ abstract class Model
         ];
     }
 
+    public function hasError($attribute)
+    {
+        return isset($this->errors[$attribute][0]);
+     }
+
+     public function getFirstError($attribute)
+     {
+         return $this->errors[$attribute][0] ?? false;
+     }
 }
