@@ -18,7 +18,7 @@ $config =[
 //$app->router->get('/code/public/contact', 'contact');
  
 //$app->router->get('/code/public/', 'home');
-var_dump($config);
+//var_dump($config);
 
 $app = new Aplication(dirname(__DIR__), $config);
 /*$app->router->get('/', 'home'); 
