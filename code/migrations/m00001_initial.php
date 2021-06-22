@@ -29,6 +29,6 @@ class m00001_initial{
         $db = \app\core\Aplication::$app->db;
         $sql = "DROP TABLE `users`";
             
-        $db->pdo->exec($sql);
+        $db->pdo->exec($sql);  
     }
 }
