@@ -14,7 +14,7 @@ print_r($_ENV);
 $config =[
         'db' => [
             'dsn' => $_ENV['DSN'],
-            'user' => $_ENV['USERNAME'],
+            'user' => $_ENV['USER'],
             'password' => $_ENV['PASSWORD'],
                 ]
         ];
