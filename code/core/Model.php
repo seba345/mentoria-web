@@ -62,7 +62,7 @@ abstract class Model
     {
         $message = $this->errorMessages()[$rule] ?? '';
 
-        foreach ($param as $key => $params){
+        foreach ($param as $key => $param){
                 $message = str_replace("{{$key}}", $param, $message);
         }
 

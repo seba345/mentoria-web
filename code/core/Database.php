@@ -37,5 +37,10 @@ class Database
 
         return $statement->fetchAll(\PDO::FETCH_COLUMN);
     }
+    public function saveMigrations(array $newMigrations){
 
+        $values = implode(',', array_map(fn($m)=>"('$m')", $newMigrations));
+        $statement = $this->pdo->prepare("INSERT INTO migrations (migration) VALUES $values");
+        $statement->execute();
+    }
  }
