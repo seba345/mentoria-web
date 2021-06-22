@@ -22,6 +22,29 @@ class Database
         $this->createMigrationsTable();
 
         $appliedMigrations = $this->getAppliedMigrations();
+
+        $files = scandir(Aplication::$ROOT_DIR . '/migrations');
+        $toApplyMigrations = array_diff($files, $appliedMigrations);
+
+        foreach ($toApplyMigrations as $migration){
+            if ($migration === '.' || $migration === '..'){
+                continue;
+            }
+
+            require_once Aplication::$ROOT_DIR . '/migrations/' . $migration;
+            $className = pathinfo($migration, PATHINFO_FILENAME);
+            $instance = new $className();
+            echo "Applying migration $migration\n";
+            $instance->up();
+            echo "Applied migration $migration\n";
+
+            $newMigrations[] = $migration;
+        }
+        if (!empty($newMigrations)) {
+            $this->saveMigrations($newMigrations);
+        } else{
+            echo "All migrations has been applied\n";
+        }
     }
    
     public function createMigrationsTable()
