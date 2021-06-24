@@ -1,6 +1,5 @@
 <?php
 namespace app\models;
-namespace app\core;
 
 use app\core\DbModel;
 
@@ -36,22 +35,12 @@ class RegisterModel extends DbModel
 
         public function attributes(): array
         {
-                /*return [
+                return [
                         'firstName',
                         'lastName',
                         'email',
                         'password',
-                ];*/
-                $pdo = Aplication::$app->db->pdo;
-                $tableName = $this->tableName();
-
-                $sql = "DESC $tableName";
-                $statement = $pdo->prepare($sql);
-                print_r($tableName);
-                print_r($sql);
-                exit;
-                $statement->execute();
-        
-                return $statement->fetchAll(\PDO::FETCH_COLUMN);
+                ];
+          
         }
 }
