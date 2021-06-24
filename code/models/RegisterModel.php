@@ -42,8 +42,12 @@ class RegisterModel extends DbModel
                         'password',
                 ];*/
                 $tableName = $this->tableName();
+
                 $sql = "DESC $tableName";
                 $statement = $this->pdo->prepare($sql);
+                print_r($tableName);
+                print_r($sql);
+                exit;
                 $statement->execute();
         
                 return $statement->fetchAll(\PDO::FETCH_COLUMN);
