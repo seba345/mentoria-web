@@ -17,7 +17,7 @@ abstract class DbModel extends Model
         print_r($sql);
         exit;*/
         $statement2->execute();
-        $attributes = $this->$statement2;
+        $attributes = $statement2->fetchAll(\PDO::FETCH_COLUMN);;
 
         //$attributes = $this->attributes();
         //arrow
