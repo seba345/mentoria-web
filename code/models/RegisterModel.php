@@ -1,5 +1,6 @@
 <?php
 namespace app\models;
+namespace app\core;
 
 use app\core\DbModel;
 
@@ -41,10 +42,11 @@ class RegisterModel extends DbModel
                         'email',
                         'password',
                 ];*/
+                $pdo = Aplication::$app->db->pdo;
                 $tableName = $this->tableName();
 
                 $sql = "DESC $tableName";
-                $statement = $this->pdo->prepare($sql);
+                $statement = $pdo->prepare($sql);
                 print_r($tableName);
                 print_r($sql);
                 exit;
