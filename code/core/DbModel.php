@@ -13,9 +13,9 @@ abstract class DbModel extends Model
         $tableName = $this->tableName();
         $sql = "DESC $tableName";
         $statement2 = $pdo->prepare($sql);
-        print_r($tableName);
+        /*print_r($tableName);
         print_r($sql);
-        exit;
+        exit;*/
         $statement2->execute();
         $attributes = $this->$statement2;
 
