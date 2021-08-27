@@ -18,8 +18,9 @@ abstract class DbModel extends Model
         exit;*/
         $statement2->execute();
         $attributes = $statement2->fetchAll(\PDO::FETCH_COLUMN);;
-
+        //anterior ini
         //$attributes = $this->attributes();
+        //anterior fin
         //arrow
         $params = array_map(fn ($attr) => ":$attr", $attributes);
         

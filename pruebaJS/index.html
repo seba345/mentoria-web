@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Prueba Javascript</title>
+        <style>
+            .square{
+                width: 100px;
+                height: 100px;
+            }
+            .red {
+                background-color: red;
+              
+            }
+            .blue {
+                background-color: blue;
+            }
+        </style>
+</head>
+<body>
+        <div id="parentDiv">
+                <div id="squareDiv" class="square red"> </div>
+                <button id="ChangeColorButton">Load Users</button>
+        </div>
+   
+<img id="imgLoad" src="" alt="">
+
+<table>
+        <thead>
+            <tr>
+                <th>Nombre Completo</th>
+            </tr>
+        </thead>
+        <tbody id="userTable">
+
+        </tbody>
+</table>
+    <script>
+        //ejemplo jason
+        $('#ChangeColorButton').click(function(event){
+    $.getJSON("https://mentoria12.segic.cl/",function(data){
+        console.log(data);
+        let names = data.map((user) =>user.firstname + " " + user.lastname);
+        console.log(names);
+        names.forEach(element => {
+            let trElement = "<tr><td>" + name + "</td></tr>";
+            $('#userTable').append(trElement);
+            
+        });
+    });
+});
+
+/*$('#ChangeColorButton').click(function(event){
+    $.getJSON("https://aws.random.cat/meow?ref=public-apis",function(data){
+      //  console.log(data);
+        $('#imgLoad')
+        .attr('src', data.file)
+        .fadeIn("slow")
+        .click(function(){
+            $("#imgLoad").fadeOut("slow");
+        });
+
+    });
+});*/
+
+
+
+        //ejemplo uso de JS
+        /*
+            $('#ChangeColorButton').click(function(event){
+               if ( $('#squareDiv').hasClass('red')){
+                $('#squareDiv')
+                .removeClass('red')
+                .addClass('blue');
+               }else
+               $('#squareDiv')
+                .removeClass('blue')
+                .addClass('red');
+            });*/
+
+/*
+//ejemplo uso de DOM
+            document.getElementById('ChangeColorButton')
+            .addEventListener('click',function(){
+                // parar evento burbujeante (event Bubbling)
+                event.stopPropagation();
+                let divElement = document.getElementById('squareDiv');
+
+                if (divElement.classList.contains('red')){
+                    divElement.classList.replace('red','blue');
+                }else{
+                divElement.classList.replace('blue','red');
+                }
+            });
+            document.getElementById('parentDiv')
+            .addEventListener('click',function(event){
+                console.log("yeah baby");
+            });*/
+        //Document Object Model
+        //axios y jquery (yii)
+        // Juego
+    var tasks = [
+        {
+            "name": "Estudiar Javascript",
+            "duracion": 60
+         },
+         {
+            "name": "Estudiar Vue",
+            "duracion": 150
+         },
+         {
+            "name": "Estudiar Laravel",
+            "duracion": 100
+         }
+    ];
+/*let taskName = [];
+for (let i =0; i<tasks.length; i++){
+    taskName.push(tasks[i].name);
+    //console.log(tasks[i].name);
+}
+let taskNames = [];
+tasks.forEach(function(task){
+    taskNames.push(task.name);
+}); */
+
+//map"transformacion"
+// filter reduce "filtrar ciertos datos"
+//arrow function JS PHP Dart
+//                  (parametros) => return implicito
+//let taskNames = tasks.map((task) => task.name);
+
+/* //metodo 1
+let difficultTasks =[];
+tasks.forEach(function(task){
+    if (task.duracion >= 100) {
+        difficultTasks.push(task.name);
+    }
+});*/
+
+/*metodo 2
+let difficultTasks =tasks.filter(function(task){
+    return task.duracion >= 100;
+    
+});
+*/
+//metodo 1+2
+/*let difficultTasks = tasks.filter((task) => task.duracion >=100).map((task) => task.name);
+console.log(difficultTasks);*/
+
+let frutas = ['Manzana','Peras','Naranjas','Platano'];
+let frutasEliminadas = frutas.splice(1,2,'Durazno','Uva');
+console.log(frutas);
+console.log(frutasEliminadas);
+console.log(frutas.indexOf('Platano'));
+
+    </script>
+    
+</body>
+</html>

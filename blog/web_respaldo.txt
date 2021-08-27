@@ -1,0 +1,52 @@
+<?php
+
+use App\Models\Post;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('posts');
+});
+
+//MVC
+Route::get('/post/{posts}', function ($slug) {
+return view('post', [
+    'post' => Post::find($slug),
+]);
+
+    //larabel dd()  ddd() para depurar
+    $path = __DIR__ . "/../resources/posts/$slug.html";
+
+    if (!file_exists($path)){
+        return redirect('/');
+    }
+/* forma 1
+    $post =cache()->remember("post.{$slug}",5, function() use($path) {
+        var_dump('file_get_contents');
+        return file_get_contents($path);
+    });*/
+/*forma 2 con arrow*/
+    $post =cache()->remember("post.{$slug}",5, fn() => file_get_contents($path));
+   
+
+    return view('post', [
+        'post' => $post,
+        //'post' => file_get_contents($path),
+    ]);
+})->where('post', '[A-Za-z\-_]+');
+
+/*Route::get('/post', fn () => view('post'));*/
+
+/*Route::get('/', fn () => view('welcome'));*/
+/*Route::get('/', fn () => 'hola Segic');*/
+/*Route::get('/', fn () => ['id' => 8 ,'url' => 'http://www.segic.cl']);*/

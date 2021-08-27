@@ -1,0 +1,15 @@
+.character {
+    height: 70px;
+    width: 40px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+}
+
+.character-sliding {
+    height: 40px;
+    width: 70px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+}
