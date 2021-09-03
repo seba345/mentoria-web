@@ -5,7 +5,7 @@
         <article>   
         <h1>
             <a href="/post/<?= $post->id ?>"> 
-                <?= $post->title ?>
+                {{ $post->title }}
                 </a>
     </h1>    
             <p><?= $post->resumen ?></p>
