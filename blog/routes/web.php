@@ -33,9 +33,9 @@ Route::get('/', function () {
 
     }*/
 
-        $posts = cache()->rememberForever('posts.all',fn()=> Post::all()
+      /*  $posts = cache()->rememberForever('posts.all',fn()=> Post::all()
                 );
-
+*/
     return view('posts', [
         'posts' => $posts
     ]);
