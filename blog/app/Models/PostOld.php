@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 
-class Post
+class PostOld
 {
         public string $title;
         public string $resumen;
@@ -40,7 +40,7 @@ class Post
 
             return collect(File::files(resource_path("posts/")))    
             ->map(fn ($file) => YamlFrontMatter::parseFile($file))
-            ->map(fn ($document) => Post::createFromDocument($document));
+            ->map(fn ($document) => PostOld::createFromDocument($document));
         }
 
 
