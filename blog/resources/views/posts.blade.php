@@ -8,7 +8,7 @@
                 {{ $post->title }}
                 </a>
     </h1>    
-            <p><?= $post->resumen ?></p>
+            <p>{{ $post->resumen }}</p>
         </article>
         @endforeach
 @endsection
