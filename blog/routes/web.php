@@ -33,9 +33,9 @@ Route::get('/', function () {
 
     }*/
 
-        $posts = fn()=> Post::all()
-                ;
-
+        $posts = cache()->remember('posts.all',100,fn()=> Post::all()
+                );
+            
     return view('posts', [
         'posts' => $posts
     ]);
