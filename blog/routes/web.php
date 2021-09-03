@@ -46,7 +46,7 @@ Route::get('/post/{post}', function (Post $post) {
 return view('post', [
     'post' => $post,
 ]);
-})
+});
 /*->where('post', '[A-Za-z\_-]+');
 
 /*Route::get('/post', fn () => view('post'));*/
