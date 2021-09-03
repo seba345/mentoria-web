@@ -42,11 +42,12 @@ Route::get('/', function () {
 });
 
 //MVC
-Route::get('/post/{post}', function ($slug) {
+Route::get('/post/{post}', function (Post $post) {
 return view('post', [
-    'post' => Post::find($slug),
+    'post' => $post,
 ]);
-})->where('post', '[A-Za-z\_-]+');
+})
+/*->where('post', '[A-Za-z\_-]+');
 
 /*Route::get('/post', fn () => view('post'));*/
 
