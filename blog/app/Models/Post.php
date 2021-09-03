@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //Traits
+    //Traits 
     use HasFactory;
 }
