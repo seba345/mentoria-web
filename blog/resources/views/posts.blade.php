@@ -6,7 +6,7 @@
         <h1>
             <a href="/post/<?= $post->slug ?>"> 
                 {{ $post->title }}
-                </a>
+                </a> 
     </h1>    
             <p>{{ $post->resumen }}</p>
         </article>
