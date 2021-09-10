@@ -49,7 +49,9 @@ return view('post', [
 });
 
 Route::get('/category/{category}', function (Category $category) {
-    return 'categorias';
+    return view('post', [
+        'post' => $category->posts,
+    ]);
 }
 );
 /*->where('post', '[A-Za-z\_-]+');
