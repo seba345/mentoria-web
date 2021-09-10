@@ -1,9 +1,9 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
-use Illuminate\Support\Facades\File;
 
 
 /*
@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\File;
 */
 
 Route::get('/', function () {
-    $posts = [];
-    /*$files = File::files(resource_path("posts/"));
+   $posts = [];
+   /* $files = File::files(resource_path("posts/"));
     
     
     foreach ($files as $file){
@@ -47,6 +47,11 @@ return view('post', [
     'post' => $post,
 ]);
 });
+
+Route::get('/category/{category}', function (Category $category) {
+    return 'categorias';
+}
+);
 /*->where('post', '[A-Za-z\_-]+');
 
 /*Route::get('/post', fn () => view('post'));*/
