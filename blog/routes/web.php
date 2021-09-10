@@ -49,8 +49,8 @@ return view('post', [
 });
 
 Route::get('/category/{category}', function (Category $category) {
-    return view('post', [
-        'post' => $category->posts,
+    return view('posts', [
+        'posts' => $category->posts,
     ]);
 }
 );
