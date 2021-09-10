@@ -18,10 +18,12 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::get('/', function () {
-   $posts = [];
-   /* $files = File::files(resource_path("posts/"));
+    Illuminate\Support\Facades\DB::listen(function($query){
+        logger($query->sql);
+    });
     
-    
+    $posts = [];
+   /* $files = File::files(resource_path("posts/"));  
     foreach ($files as $file){
         $document = YamlFrontMatter::parseFile($file);
         $posts[] =  new Post(
