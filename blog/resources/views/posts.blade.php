@@ -8,7 +8,9 @@
                 {{ $post->title }}
                 </a> 
     </h1>    
-    <p><a href="/category/{{$post->category->slug}}" >
+    <p>
+        by <a href="#">Juan Perez</a> 
+        <a href="/category/{{$post->category->slug}}" >
                 {{ $post->category->name }}
                 </a> 
     </p>
