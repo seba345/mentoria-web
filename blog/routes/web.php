@@ -35,11 +35,11 @@ Route::get('/', function () {
 
     }*/
 
-        $posts = cache()->remember('posts.all',1,fn()=> Post::all()
-                );
+    /*    $posts = cache()->remember('posts.all',1,fn()=> Post::all()
+                );*/
             
     return view('posts', [
-        'posts' => $posts
+        'posts' => Post::with('category')->get()
     ]);
 });
 
