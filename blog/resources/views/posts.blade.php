@@ -9,7 +9,7 @@
                 </a> 
     </h1>    
     <p>
-        by <a href="#">Juan Perez</a> in   
+        by <a href="#">{{ $post->name }}</a> in   
         <a href="/category/{{$post->category->slug}}" >
                 {{ $post->category->name }}
                 </a> 
