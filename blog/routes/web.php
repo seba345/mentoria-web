@@ -62,7 +62,8 @@ Route::get('/category/{category:slug}', function (Category $category) {
 
 Route::get('/author/{author}', function (User $author) {
     return view('posts', [
-        'posts' => $author->posts,
+        //eager 
+        'posts' => $author->posts->load(['category','author']),
     ]);
 }
 );
