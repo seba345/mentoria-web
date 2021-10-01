@@ -10,7 +10,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/segic-logo.png" alt="SEGIC Logo" width="165" height="16">
+                    <img src="@segic-logo.png" alt="SEGIC Logo" width="165" height="16">
                 </a>
             </div>
 

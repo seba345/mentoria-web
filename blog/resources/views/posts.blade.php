@@ -1,3 +1,3 @@
-<x-layout content="Hola segic!!">
-
+<x-layout >
+HOLA SEGIC ! ESTOY UTILIZANDO VARIABLE SLOT
 </x-layout>
