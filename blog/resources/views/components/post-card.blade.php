@@ -19,32 +19,28 @@
 
                                 <div class="mt-4">
                                     <h1 class="text-3xl">
-                                        This is a big title and it will look great on two or even three lines. Wooohoo!
+                                    {{ $post->title }}
                                     </h1>
 
                                     <span class="mt-2 block text-gray-400 text-xs">
-                                        Published <time>1 day ago</time>
+                                        Published <time>{{ $post->created_at->diffForHumans() }}</time>
                                     </span>
                                 </div>
                             </header>
 
                             <div class="text-sm mt-4">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                {{ $post->resumen }}
                                 </p>
 
-                                <p class="mt-4">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                </p>
+            
                             </div>
 
                             <footer class="flex justify-between items-center mt-8">
                                 <div class="flex items-center text-sm">
                                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                                     <div class="ml-3">
-                                        <h5 class="font-bold">Lary Laracore</h5>
+                                        <h5 class="font-bold">{{ $post->author->name }}</h5>
                                         <h6>Mascot at SEGIC</h6>
                                     </div>
                                 </div>
