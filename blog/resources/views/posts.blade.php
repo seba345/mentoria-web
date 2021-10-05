@@ -7,7 +7,10 @@
     <x-post-main :post="$posts[0]" />
 
     <div class="lg:grid lg:grid-cols-2">
-    <x-post-card />
+        @foreach ($posts->skip(1) as $post)
+            <x-post-card />
+        @endforeach
+
     <x-post-card />
     </div>
 
