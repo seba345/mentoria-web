@@ -53,7 +53,7 @@ return view('post', [
 ]);
 });
 
-Route::get('/category/{category:slug}', function (Category $category) {
+Route::get('/category/{name}', function (Category $category) {
     return view('posts', [
         'posts' => $category->posts,
     ]);
