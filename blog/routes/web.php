@@ -65,7 +65,7 @@ Route::get('/author/{author}', function (User $author) {
         //eager 
         'posts' => $author->posts->load(['category','author']),
     ]);
-}
+} 
 );
 /*->where('post', '[A-Za-z\_-]+');
 
