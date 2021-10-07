@@ -42,7 +42,8 @@ Route::get('/', function () {
     return view('posts', [
         'posts' => Post::latest('published_at')
         ->with(['category','author'])
-        ->get()
+        ->get(),
+        'categories'=> Category::all()
     ]);
 });
 
@@ -56,6 +57,12 @@ return view('post', [
 Route::get('/category/{category:slug}', function (Category $category) {
     return view('category', [
         'posts' => $category->posts->load(['category','author']),
+        /*'posts' => Post::join('categories','categories.id','=','posts.category_id')
+        ->where('posts.category_id', $category->id)
+        ->latest('published_at')
+        ->with(['category','author'])
+        ->get()*/
+
     ]);
 }
 );
