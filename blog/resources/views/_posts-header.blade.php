@@ -14,12 +14,13 @@
             <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
                 <!--  Category -->
                 <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
-                    <div x-data>
-                            <button>Category</button>
+                    <div x-data="{ show: false }">
+                        <button @click="alert('hola')">Category</button>
 
-                            <a href="#">One</a>
-                            <a href="#">Two</a>
-                            <a href="#">Three</a>
+
+                            <a href="#" x-show="show">One</a>
+                            <a href="#" x-show="show">Two</a>
+                            <a href="#" x-show="show">Three</a>
                     </div>
                   <!--  <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
                         <option value="category" disabled selected>Category
