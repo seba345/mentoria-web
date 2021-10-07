@@ -24,7 +24,7 @@
                                 </h1>
 
                                 <span class="mt-2 block text-gray-400 text-xs">
-                                        Published <time>{{ $post->created_at->diffForHumans() }}</time>
+                                        Published  button <time>{{ $post->created_at->diffForHumans() }}</time>
                                     </span>
                             </div>
                         </header>
