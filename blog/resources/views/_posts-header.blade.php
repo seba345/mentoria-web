@@ -15,7 +15,7 @@
                 <!--  Category -->
                 <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
                     <div x-data="{ show: false }">
-                        <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold">
+                        <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold inline-flex">
                             Category
                         </button>
 
