@@ -14,8 +14,8 @@
             <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
                 <!--  Category -->
                 <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
-                    <div x-data="{ show: false }">
-                        <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold inline-flex">
+                    <div x-data="{ show: false }" @click.away="show=false">
+                        <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold lg-50 w-full inline-flex">
                             Category
                             <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
                          height="22" viewBox="0 0 22 22">
@@ -28,9 +28,11 @@
                     </svg>
                         </button>
                         <div x-show="show" class="py-2 absolute bg-gray-100 w-full mt-2 rounded-xl z-50 px-3 text-sm" style="display: none;">
-                            <a href="#" class="block text-left px-3 text-sm leading-3 hover:bg-blue-500 hover:text-white">One</a>
-                            <a href="#" class="block text-left px-3 text-sm leading-3 hover:bg-blue-500 hover:text-white">Two</a>
-                            <a href="#" class="block text-left px-3 text-sm leading-3 hover:bg-blue-500 hover:text-white">Three</a>
+                        @foreach ($categories as $category)
+                        <a href="/category/{{ $category->slug }}" class="block text-left px-3 text-sm leading-3 hover:bg-blue-500 hover:text-white">
+                        {{ $category->name }}
+                    </a>
+                        @endforeach
                         </div>
                             
                     </div>

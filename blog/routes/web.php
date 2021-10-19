@@ -57,6 +57,7 @@ return view('post', [
 Route::get('/category/{category:slug}', function (Category $category) {
     return view('category', [
         'posts' => $category->posts->load(['category','author']),
+        'categories'=> Category::all(),
         /*'posts' => Post::join('categories','categories.id','=','posts.category_id')
         ->where('posts.category_id', $category->id)
         ->latest('published_at')
@@ -71,6 +72,7 @@ Route::get('/author/{author}', function (User $author) {
     return view('posts', [
         //eager 
         'posts' => $author->posts->load(['category','author']),
+        'categories'=> Category::all(),
     ]);
 } 
 );
