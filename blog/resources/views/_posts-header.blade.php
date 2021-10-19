@@ -16,8 +16,8 @@
                 <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
                     <div x-data="{ show: false }" @click.away="show=false">
                         <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold lg:w-32 w-full inline-flex">
-                            Category
-                            {{ isset($currentCategory) ? $currentCategory : ucwords('Categories') }}
+
+                            {{ isset($currentCategory) ? $currentCategory->name : ucwords('Categories') }}
 
                             <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
                          height="22" viewBox="0 0 22 22">
