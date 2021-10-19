@@ -15,7 +15,7 @@
                 <!--  Category -->
                 <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
                     <div x-data="{ show: false }" @click.away="show=false">
-                        <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold lg-50 w-full inline-flex">
+                        <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold lg:w-32 w-full inline-flex">
                             Category
                             {{ isset($currentCategory) ? $currentCategory : ucwords('Categories') }}
 
@@ -34,7 +34,7 @@
                         <a href="/category/{{ $category->slug }}" 
                         class="block text-left px-3 text-sm leading-3 hover:bg-blue-500 hover:text-white
                                 {{ isset($currentCategory) && $currentCategory === $category->id ? 'bg-blue-500 text-white' : ''}}">
-                        {{ucwords($category->name) }}
+                        {{ucwords( $category->name ) }}
                     </a>
                         @endforeach
                         </div>
