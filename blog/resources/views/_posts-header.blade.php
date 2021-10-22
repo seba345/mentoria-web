@@ -19,47 +19,22 @@
                         <button @click="show = !show" class="py-2 pl-3 pr-9 text-sm font-semibold lg:w-32 w-full inline-flex">
 
                             {{ isset($currentCategory) ? ucwords($currentCategory->name) : 'Categories' }}
-                <x-dropdown-arrow style="right: 12px;">
-                    
-                </x-dropdown-arrow>
-                           
-                            </button>
-                        </x-slot>
-                    <x-dropdown-item href="/" :actived="request()->routeIs('home')"> All </x-dropdown-item>
-                        @foreach ($categories as $category)           
-                    <x-dropdown-item 
-                                    href="/category/{{ $category->slug }}" 
-                                    :actived ="isset($currentCategory) && $currentCategory->is($category)">
-                          {{ucwords( $category->name ) }}
-                    </x-dropdown-item>
-                        @endforeach
-                    </x-dropdown>
-
-                    <div x-data="{ show: false }" @click.away="show=false">
-                       
-                        <div x-show="show" class="py-2 absolute bg-gray-100 w-full mt-2 rounded-xl z-50 px-3 text-sm" style="display: none;">
-                       
-                        </div>
+                        <x-dropdown-arrow style="right: 12px;">
                             
-                    </div>
-                  <!--  <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
-                        <option value="category" disabled selected>Category
-                        </option>
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->slug }}">{{ $category->name }}</option>
-                        @endforeach
-                        
-                    </select>
-
-                    <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
-                         height="22" viewBox="0 0 22 22">
-                        <g fill="none" fill-rule="evenodd">
-                            <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
-                            </path>
-                            <path fill="#222"
-                                  d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
-                        </g>
-                    </svg>-->
+                        </x-dropdown-arrow>
+                                
+                                    </button>
+                                </x-slot>
+                            <x-dropdown-item href="/" :actived="request()->routeIs('home')"> All </x-dropdown-item>
+                                @foreach ($categories as $category)           
+                            <x-dropdown-item 
+                                            href="/category/{{ $category->slug }}" 
+                                            :actived ="isset($currentCategory) && $currentCategory->is($category)">
+                                {{ucwords( $category->name ) }}
+                            </x-dropdown-item>
+                                @endforeach
+                            </x-dropdown>
+                 
                 </div>
 
                 <!-- Other Filters -->
