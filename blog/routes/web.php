@@ -45,7 +45,7 @@ Route::get('/', function () {
         ->get(),
         'categories'=> Category::all()
     ]);
-});
+})->name('home');
 
 //MVC
 Route::get('/post/{post}', function (Post $post) {
