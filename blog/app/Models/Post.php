@@ -32,7 +32,7 @@ class Post extends Model
        //         ->orWhere('resumen', 'like', '%' . request('search') . '%');
        //     }
     }
-    //hasOne, hasMany, belongTo, belongsToMany
+    //hasOne, hasMany, belongTo, belongsToMany  
     public function category()
     {
         return $this->belongsTo(Category::class);
