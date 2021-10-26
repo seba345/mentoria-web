@@ -19,18 +19,18 @@ class Post extends Model
     }
     public function scopeFilter($query, array $filters)
     {
-        $query->when(
-            isset($filters['search']), 
-            fn($query, $search) =>
-        $query->where('title', 'like',"%$search%")
-        ->orWhere('resumen', 'like', "%$search%")
-        );
+     //   $query->when(
+      //      isset($filters['search']), 
+      //      fn($query, $search) =>
+      //  $query->where('title', 'like',"%$search%")
+      //  ->orWhere('resumen', 'like', "%$search%")
+       /// );
 
-       // if (isset($filters['search']))
-       // {
-       //    return  $query->where('title', 'like', '%' . request('search') . '%')
-       //         ->orWhere('resumen', 'like', '%' . request('search') . '%');
-       //     }
+       if (isset($filters['search']))
+        {
+           return  $query->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('resumen', 'like', '%' . request('search') . '%');
+            }
     }
     //hasOne, hasMany, belongTo, belongsToMany  
     public function category()
