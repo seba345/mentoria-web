@@ -38,12 +38,17 @@ Route::get('/', function () {
 
     /*    $posts = cache()->remember('posts.all',1,fn()=> Post::all()
                 );*/
-            
+        $posts = Post::latest('published_at')
+                ->with(['category','author']);
+
+            if (request('search')){
+            $posts->where('title', 'like', '%' . request('search') . '%')
+                 ->orWhere('resumen', 'like', '%' . request('search') . '%');
+            }
+
     return view('posts', [
-        'posts' => Post::latest('published_at')
-        ->with(['category','author'])
-        ->get(),
-        'categories'=> Category::all()
+        'posts' => $posts->get(),
+        'categories'=> Category::all(),
     ]);
 })->name('home');
 
