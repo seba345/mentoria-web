@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
@@ -18,7 +19,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [PostController::class,'index']/*function () {
     Illuminate\Support\Facades\DB::listen(function($query){
         logger($query->sql, $query->bindings);
     });
@@ -38,26 +39,14 @@ Route::get('/', function () {
 
     /*    $posts = cache()->remember('posts.all',1,fn()=> Post::all()
                 );*/
-        $posts = Post::latest('published_at')
-                ->with(['category','author']);
-
-            if (request('search')){
-            $posts->where('title', 'like', '%' . request('search') . '%')
-                 ->orWhere('resumen', 'like', '%' . request('search') . '%');
-            }
-
-    return view('posts', [
-        'posts' => $posts->get(),
-        'categories'=> Category::all(),
-    ]);
-})->name('home');
+    
+  )->name('home');
 
 //MVC
-Route::get('/post/{post}', function (Post $post) {
-return view('post', [
-    'post' => $post,
-]);
-});
+Route::get('/post/{post}',[PostController::class, 'show']);
+
+
+
 
 Route::get('/category/{category:slug}', function (Category $category) {
     return view('category', [

@@ -11,10 +11,19 @@ class Post extends Model
     use HasFactory;
     //public $fillable =['title','resumen','body']; 
     public $guarded = ['id'];
+    public $with =['category','author'];
 
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+    public function scopeFilter($query, array $filters)
+    {
+        if (isset($filters['search']))
+        {
+           return  $query->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('resumen', 'like', '%' . request('search') . '%');
+            }
     }
     //hasOne, hasMany, belongTo, belongsToMany
     public function category()
